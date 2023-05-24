@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NumbersInEnglish.Views.Page_Info"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:anuncios="clr-namespace:NumbersInEnglish.Views">
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="*" RowDefinitions="200,*,90">
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                HeightRequest="200"
+                Source="shared.png"
+                WidthRequest="200" />
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="by Jorge Loor" />
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="v1.0" />
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="App Programada con C# and Xamarin en Android" />
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="Agradecimientos" />
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="Erudito as Tester" />
+                <Label
+                    FontFamily="AB"
+                    HorizontalOptions="Center"
+                    Text="The Boss as Designer" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="Center">
+                <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="20">
+                    <ImageButton
+                        x:Name="instagram"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"
+                        Clicked="instagram_Clicked"
+                        Source="instagram" />
+                    <ImageButton
+                        x:Name="github"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        Clicked="github_Clicked"
+                        Source="github" />
+                    <ImageButton
+                        x:Name="web"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        Clicked="web_Clicked"
+                        Source="web" />
+                    <ImageButton
+                        x:Name="linkedin"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        BackgroundColor="Transparent"
+                        Clicked="linkedin_Clicked"
+                        Source="linkedin" />
+                </Grid>
+                <StackLayout
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    HeightRequest="60"
+                    VerticalOptions="Center">
+                    <anuncios:Page_Ads />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
