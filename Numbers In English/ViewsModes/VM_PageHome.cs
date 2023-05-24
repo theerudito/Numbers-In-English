@@ -285,8 +285,8 @@ namespace NumbersInEnglish.ViewsModes
                 IdWordData[2] = IdNumber;
 
                 ColorFrame3 = Xamarin.Forms.Color.FromHex("005DFF");
-                ColorFrame6 = Color.Violet;
-                ColorFrame1 = Xamarin.Forms.Color.FromHex("ADADAD");
+                ColorFrame1 = Color.Violet;
+                ColorFrame2 = Xamarin.Forms.Color.FromHex("ADADAD");
                 ColorFrame6 = Color.Orange;
                 ColorFrame4 = Color.Gold;
                 ColorFrame5 = Color.Aqua;
