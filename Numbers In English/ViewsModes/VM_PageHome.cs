@@ -23,7 +23,7 @@ namespace NumbersInEnglish.ViewsModes
         public VM_PageHome(INavigation navigation)
         {
             ThemeApp = LocalStorange.GetLocalStorange("theme");
-            ColorFramePrincipal = Color.Silver;
+            ColorFramePrincipal = Xamarin.Forms.Color.FromHex("333333");
 
             LabelPoints = 10;
             LabelTime = 99;
@@ -500,7 +500,7 @@ namespace NumbersInEnglish.ViewsModes
         public async void ColorDefault()
         {
             await Task.Delay(500);
-            ColorFramePrincipal = Color.Silver;
+            ColorFramePrincipal = Xamarin.Forms.Color.FromHex("333333");
         }
 
         public void AnswerCorrect()
