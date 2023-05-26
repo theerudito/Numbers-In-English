@@ -89,24 +89,30 @@
                 Margin="20">
                 <Frame
                     BackgroundColor="{Binding ColorFramePrincipal}"
-                    BorderColor="Silver"
-                    CornerRadius="50"
+                    CornerRadius="70"
                     HasShadow="True"
                     RotationX="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontFamily="AB"
-                        FontSize="200"
-                        HorizontalOptions="Center"
-                        Text="{Binding NumAleatory}"
-                        TextColor="white" />
+                    <Frame
+                        BackgroundColor="#333332"
+                        BorderColor="Silver"
+                        CornerRadius="50"
+                        HasShadow="True">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="AB"
+                            FontSize="200"
+                            HorizontalOptions="Center"
+                            Text="{Binding NumAleatory}"
+                            TextColor="white" />
+                    </Frame>
                 </Frame>
+
             </StackLayout>
 
             <StackLayout
                 Grid.Row="2"
                 Grid.Column="0"
-                Margin="5,15,5,0">
+                Margin="5,30,5,0">
                 <Grid ColumnDefinitions="*,*" RowDefinitions="60">
                     <Frame
                         Grid.Row="0"
@@ -144,7 +150,7 @@
             <StackLayout
                 Grid.Row="3"
                 Grid.Column="0"
-                Margin="5,-5,5,0">
+                Margin="5,10,5,0">
                 <Grid ColumnDefinitions="*,*" RowDefinitions="60">
                     <Frame
                         Grid.Row="0"
@@ -182,7 +188,7 @@
             <StackLayout
                 Grid.Row="4"
                 Grid.Column="0"
-                Margin="5,-25,5,0">
+                Margin="5,-10,5,0">
                 <Grid ColumnDefinitions="*,*" RowDefinitions="60">
                     <Frame
                         Grid.Row="0"
