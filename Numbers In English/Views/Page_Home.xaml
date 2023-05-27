@@ -127,7 +127,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame1}"
@@ -145,7 +145,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame2}"
@@ -171,7 +171,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame3}"
@@ -189,7 +189,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame4}"
@@ -215,7 +215,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame5}"
@@ -233,7 +233,7 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="{Binding FontFrame}"
+                            FontSize="10"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame6}"

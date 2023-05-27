@@ -71,7 +71,6 @@ namespace NumbersInEnglish.ViewsModes
         private Color _theme;
         private bool _correct;
         private int _fontsice;
-        private int _fontFrame;
 
         #endregion Properties
 
@@ -217,13 +216,6 @@ namespace NumbersInEnglish.ViewsModes
             set => SetProperty(ref _fontsice, value);
         }
 
-        public int FontFrame
-        {
-            get => _fontFrame;
-            set => SetProperty(ref _fontFrame, value);
-        }
-
-
         #endregion Objects
 
         #region Methods
@@ -274,8 +266,6 @@ namespace NumbersInEnglish.ViewsModes
             var numberFive = await _dbContext.Number.Where(x => x.IdNumber == dataRandom[3]).FirstOrDefaultAsync();
             var numberSix = await _dbContext.Number.Where(x => x.IdNumber == dataRandom[4]).FirstOrDefaultAsync();
 
-            FontSiceFrame(numberOne.Traduction.ToString(), numberOne.Traduction.ToString(), numberThree.Traduction.ToString(), numberFour.Traduction.ToString(), numberFive.Traduction.ToString(), numberSix.Traduction.ToString());
-
             var random = new Random();
 
             var numRandom = random.Next(1, 5);
@@ -288,8 +278,6 @@ namespace NumbersInEnglish.ViewsModes
                 TextFrame4 = numberFour.Traduction;
                 TextFrame5 = numberFive.Traduction;
                 TextFrame6 = numberSix.Traduction;
-
-
 
                 IdWordData[0] = IdNumber;
 
@@ -389,22 +377,6 @@ namespace NumbersInEnglish.ViewsModes
                 ColorFrame3 = Color.Orange;
                 ColorFrame2 = Color.Gold;
                 ColorFrame1 = Color.Aqua;
-            }
-        }
-
-        public void FontSiceFrame(string r1, string r2, string r3, string r4, string r5, string r6)
-        {
-            if (r1.Length >= 19 || r2.Length >= 19 || r3.Length >= 19 || r4.Length >= 19 || r5.Length >= 19 || r6.Length >= 19)
-            {
-                FontFrame = 10;
-            }
-            else if (r1.Length <= 8 || r2.Length <= 8 || r3.Length <= 8 || r4.Length <= 8 || r5.Length <= 8 || r6.Length <= 8)
-            {
-                FontFrame = 15;
-            }
-            else
-            {
-                FontFrame = 15;
             }
         }
 
