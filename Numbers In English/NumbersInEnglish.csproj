@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Sound\error.mp3" />
+    <EmbeddedResource Include="Sound\error.mp3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -91,7 +91,9 @@
                     BackgroundColor="{Binding ColorFramePrincipal}"
                     CornerRadius="70"
                     HasShadow="True"
-                    RotationX="10">
+                    HeightRequest="300"
+                    RotationX="10"
+                    WidthRequest="200">
                     <Frame
                         BackgroundColor="#333332"
                         BorderColor="Silver"
@@ -100,13 +102,14 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
-                            FontSize="200"
+                            FontSize="{Binding FontSice}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding NumAleatory}"
-                            TextColor="white" />
+                            TextColor="white"
+                            VerticalOptions="Center" />
                     </Frame>
                 </Frame>
-
             </StackLayout>
 
             <StackLayout
@@ -125,9 +128,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame1}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                     <Frame
                         Grid.Row="0"
@@ -140,9 +146,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame2}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                 </Grid>
             </StackLayout>
@@ -163,9 +172,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame3}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                     <Frame
                         Grid.Row="0"
@@ -178,9 +190,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame4}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                 </Grid>
             </StackLayout>
@@ -201,9 +216,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame5}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                     <Frame
                         Grid.Row="0"
@@ -216,9 +234,12 @@
                         <Label
                             FontAttributes="Bold"
                             FontFamily="AB"
+                            FontSize="{Binding FontFrame}"
                             HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
                             Text="{Binding TextFrame6}"
-                            TextColor="Black" />
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
                     </Frame>
                 </Grid>
             </StackLayout>

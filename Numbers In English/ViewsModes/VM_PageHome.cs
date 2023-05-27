@@ -54,7 +54,7 @@ namespace NumbersInEnglish.ViewsModes
         private int _labelPoints;
         private int _labelTime;
         private Color _colorFramePrincipal;
-        private int _numAleatory;
+        private string _numAleatory;
         private int _idNumber;
         private string _textFrame1;
         private string _textFrame2;
@@ -70,6 +70,8 @@ namespace NumbersInEnglish.ViewsModes
         private Color _colorFrame6;
         private Color _theme;
         private bool _correct;
+        private int _fontsice;
+        private int _fontFrame;
 
         #endregion Properties
 
@@ -111,7 +113,7 @@ namespace NumbersInEnglish.ViewsModes
             set => SetProperty(ref _colorFramePrincipal, value);
         }
 
-        public int NumAleatory
+        public string NumAleatory
         {
             get => _numAleatory;
             set => SetProperty(ref _numAleatory, value);
@@ -209,6 +211,19 @@ namespace NumbersInEnglish.ViewsModes
 
         private int[] IdWordData = { 1, 2, 3, 4, 5, 6 };
 
+        public int FontSice
+        {
+            get => _fontsice;
+            set => SetProperty(ref _fontsice, value);
+        }
+
+        public int FontFrame
+        {
+            get => _fontFrame;
+            set => SetProperty(ref _fontFrame, value);
+        }
+
+
         #endregion Objects
 
         #region Methods
@@ -217,9 +232,35 @@ namespace NumbersInEnglish.ViewsModes
         {
             var number = await _dbContext.Number.Where(x => x.IdNumber == RandomNumber.GetRandomNumber()).FirstOrDefaultAsync();
 
-            NumAleatory = number.Number;
+            StringLength(number.Number.ToString());
+
+            NumAleatory = number.Number.ToString();
 
             IdNumber = number.IdNumber;
+        }
+
+        public void StringLength(string text)
+        {
+            if (text.Length == 3)
+            {
+                FontSice = 150;
+            }
+            else if (text.Length == 4)
+            {
+                FontSice = 120;
+            }
+            else if (text.Length == 5)
+            {
+                FontSice = 90;
+            }
+            else if (text.Length == 6)
+            {
+                FontSice = 80;
+            }
+            else
+            {
+                FontSice = 200;
+            }
         }
 
         public async void GenerateAnswers()
@@ -233,6 +274,8 @@ namespace NumbersInEnglish.ViewsModes
             var numberFive = await _dbContext.Number.Where(x => x.IdNumber == dataRandom[3]).FirstOrDefaultAsync();
             var numberSix = await _dbContext.Number.Where(x => x.IdNumber == dataRandom[4]).FirstOrDefaultAsync();
 
+            FontSiceFrame(numberOne.Traduction.ToString(), numberOne.Traduction.ToString(), numberThree.Traduction.ToString(), numberFour.Traduction.ToString(), numberFive.Traduction.ToString(), numberSix.Traduction.ToString());
+
             var random = new Random();
 
             var numRandom = random.Next(1, 5);
@@ -245,6 +288,8 @@ namespace NumbersInEnglish.ViewsModes
                 TextFrame4 = numberFour.Traduction;
                 TextFrame5 = numberFive.Traduction;
                 TextFrame6 = numberSix.Traduction;
+
+
 
                 IdWordData[0] = IdNumber;
 
@@ -347,6 +392,22 @@ namespace NumbersInEnglish.ViewsModes
             }
         }
 
+        public void FontSiceFrame(string r1, string r2, string r3, string r4, string r5, string r6)
+        {
+            if (r1.Length >= 19 || r2.Length >= 19 || r3.Length >= 19 || r4.Length >= 19 || r5.Length >= 19 || r6.Length >= 19)
+            {
+                FontFrame = 10;
+            }
+            else if (r1.Length <= 8 || r2.Length <= 8 || r3.Length <= 8 || r4.Length <= 8 || r5.Length <= 8 || r6.Length <= 8)
+            {
+                FontFrame = 15;
+            }
+            else
+            {
+                FontFrame = 15;
+            }
+        }
+
         public async Task<Numbers> FetchData()
         {
             var query = await _dbContext.Number.Where(x => x.IdNumber == IdNumber).FirstOrDefaultAsync();
@@ -371,7 +432,7 @@ namespace NumbersInEnglish.ViewsModes
             else
             {
                 ColorFrame1 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
                 Correct = false;
                 Points();
             }
@@ -397,7 +458,7 @@ namespace NumbersInEnglish.ViewsModes
                 Correct = false;
                 Points();
                 ColorFrame2 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
             }
         }
 
@@ -421,7 +482,7 @@ namespace NumbersInEnglish.ViewsModes
                 Correct = false;
                 Points();
                 ColorFrame3 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
             }
         }
 
@@ -444,7 +505,7 @@ namespace NumbersInEnglish.ViewsModes
             {
                 Correct = false;
                 ColorFrame4 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
                 Points();
             }
         }
@@ -468,7 +529,7 @@ namespace NumbersInEnglish.ViewsModes
             {
                 Correct = false;
                 ColorFrame5 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
                 Points();
             }
         }
@@ -492,7 +553,7 @@ namespace NumbersInEnglish.ViewsModes
             {
                 Correct = false;
                 ColorFrame6 = FrameInCorrect();
-                AnswerIncCorrect();
+                AnswerInCorrect();
                 Points();
             }
         }
@@ -506,11 +567,13 @@ namespace NumbersInEnglish.ViewsModes
         public void AnswerCorrect()
         {
             ColorFramePrincipal = FrameCorrect();
+            SoundsApp.SoundCorrect();
         }
 
-        public void AnswerIncCorrect()
+        public void AnswerInCorrect()
         {
             ColorFramePrincipal = FrameInCorrect();
+            SoundsApp.SoundInCorrect();
         }
 
         public Color FrameCorrect()
