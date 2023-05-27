@@ -29,7 +29,7 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Margin="0,10,0,0"
-                        BackgroundColor="{Binding ColorFramePrincipal}"
+                        BackgroundColor="#333"
                         BorderColor="Silver"
                         CornerRadius="10"
                         HasShadow="True"
@@ -91,7 +91,7 @@
                     BackgroundColor="{Binding ColorFramePrincipal}"
                     CornerRadius="70"
                     HasShadow="True"
-                    HeightRequest="300"
+                    HeightRequest="260"
                     RotationX="10"
                     WidthRequest="200">
                     <Frame
@@ -103,11 +103,10 @@
                             FontAttributes="Bold"
                             FontFamily="AB"
                             FontSize="{Binding FontSice}"
-                            HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding NumAleatory}"
                             TextColor="white"
-                            VerticalOptions="Center" />
+                            VerticalTextAlignment="Center" />
                     </Frame>
                 </Frame>
             </StackLayout>
