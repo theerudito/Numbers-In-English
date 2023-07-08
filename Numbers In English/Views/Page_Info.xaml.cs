@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,24 +14,30 @@ namespace NumbersInEnglish.Views
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        private async void instagram_Clicked(object sender, System.EventArgs e)
+        public async void OpenUrl(string url)
         {
-            Device.OpenUri(new Uri("https://www.instagram.com/theerudito/"));
+            var uri = new Uri(url);
+            await Browser.OpenAsync(uri);
+        }
+
+        private void instagram_Clicked(object sender, System.EventArgs e)
+        {
+            OpenUrl("https://www.instagram.com/theerudito/");
         }
 
         private void github_Clicked(object sender, System.EventArgs e)
         {
-            Device.OpenUri(new Uri("https://github.com/theerudito?tab=repositories"));
+            OpenUrl("https://github.com/theerudito?tab=repositories");
         }
 
-        private void web_Clicked(object sender, System.EventArgs e)
+        private void threads_Clicked(object sender, EventArgs e)
         {
-            Device.OpenUri(new Uri("https://byerudito.web.app/"));
+            OpenUrl("https://www.threads.net/@theerudito");
         }
 
         private void linkedin_Clicked(object sender, System.EventArgs e)
         {
-            Device.OpenUri(new Uri("https://www.linkedin.com/in/theerudito/"));
+            OpenUrl("https://www.linkedin.com/in/theerudito/");
         }
     }
 }

@@ -74,28 +74,28 @@
                         Grid.Column="0"
                         BackgroundColor="Transparent"
                         Clicked="instagram_Clicked"
-                        Source="instagram" />
+                        Source="instagram.png" />
                     <ImageButton
                         x:Name="github"
                         Grid.Row="0"
                         Grid.Column="1"
                         BackgroundColor="Transparent"
                         Clicked="github_Clicked"
-                        Source="github" />
+                        Source="github.png" />
                     <ImageButton
-                        x:Name="web"
+                        x:Name="threads"
                         Grid.Row="0"
                         Grid.Column="2"
                         BackgroundColor="Transparent"
-                        Clicked="web_Clicked"
-                        Source="web" />
+                        Clicked="threads_Clicked"
+                        Source="threads_dark.png" />
                     <ImageButton
                         x:Name="linkedin"
                         Grid.Row="0"
                         Grid.Column="3"
                         BackgroundColor="Transparent"
                         Clicked="linkedin_Clicked"
-                        Source="linkedin" />
+                        Source="linkedin.png" />
                 </Grid>
                 <StackLayout
                     Grid.Row="4"
