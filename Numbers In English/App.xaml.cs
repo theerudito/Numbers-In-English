@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MarcTron.Plugin;
+using Microsoft.EntityFrameworkCore;
 using NumbersInEnglish.ApplicationContextDB;
 using NumbersInEnglish.Helpers;
 using NumbersInEnglish.Views;
@@ -10,6 +11,8 @@ namespace NumbersInEnglish
     {
         public App()
         {
+            Ads.ShowRewardedVideo();
+
             LocalStorange.SetLocalStorange("theme", "Dark");
 
             var _dbCcontext = new ApplicationContext_DB();
@@ -24,6 +27,11 @@ namespace NumbersInEnglish
             }
 
             InitializeComponent();
+
+            CrossMTAdmob.Current.OnRewardedVideoAdLoaded += (s, args) =>
+            {
+                CrossMTAdmob.Current.ShowRewardedVideo();
+            };
 
             MainPage = new NavigationPage(new Page_Home());
         }
