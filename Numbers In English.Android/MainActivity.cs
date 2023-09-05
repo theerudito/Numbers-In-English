@@ -19,8 +19,9 @@ namespace NumbersInEnglish.Droid
 
             MobileAds.Initialize(ApplicationContext);
 
+            Plugin.FirebasePushNotification.FirebasePushNotificationManager.ProcessIntent(this, Intent);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
