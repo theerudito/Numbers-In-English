@@ -11,7 +11,19 @@ namespace NumbersInEnglish.Views
         public Page_Info()
         {
             InitializeComponent();
+
             NavigationPage.SetHasNavigationBar(this, false);
+
+            var teme = AppInfo.RequestedTheme;
+
+            if (teme == AppTheme.Dark)
+            {
+                threadsImage.Source = ImageSource.FromFile("threads_light.png");
+            }
+            else
+            {
+                threadsImage.Source = ImageSource.FromFile("threads_dark.png");
+            }
         }
 
         public async void OpenUrl(string url)
@@ -20,12 +32,12 @@ namespace NumbersInEnglish.Views
             await Browser.OpenAsync(uri);
         }
 
-        private void instagram_Clicked(object sender, System.EventArgs e)
+        private void instagram_Clicked(object sender, EventArgs e)
         {
             OpenUrl("https://www.instagram.com/theerudito/");
         }
 
-        private void github_Clicked(object sender, System.EventArgs e)
+        private void github_Clicked(object sender, EventArgs e)
         {
             OpenUrl("https://github.com/theerudito?tab=repositories");
         }
@@ -35,9 +47,14 @@ namespace NumbersInEnglish.Views
             OpenUrl("https://www.threads.net/@theerudito");
         }
 
-        private void linkedin_Clicked(object sender, System.EventArgs e)
+        private void linkedin_Clicked(object sender, EventArgs e)
         {
             OpenUrl("https://www.linkedin.com/in/theerudito/");
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            OpenUrl("https://www.facebook.com/milagros.munozcuzco.1");
         }
     }
 }

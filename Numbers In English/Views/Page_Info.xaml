@@ -51,9 +51,14 @@
                     HorizontalOptions="Center"
                     Text="Jorge Loor as Programer" />
                 <Label
+                    x:Name="tester"
                     FontFamily="AB"
                     HorizontalOptions="Center"
-                    Text="Milagros Muñoz as Tester" />
+                    Text="🚀 Milagros Muñoz as Tester 🖱️">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Grid.Column="0">
@@ -83,12 +88,11 @@
                         Clicked="github_Clicked"
                         Source="github.png" />
                     <ImageButton
-                        x:Name="threads"
+                        x:Name="threadsImage"
                         Grid.Row="0"
                         Grid.Column="2"
                         BackgroundColor="Transparent"
-                        Clicked="threads_Clicked"
-                        Source="threads_dark.png" />
+                        Clicked="threads_Clicked" />
                     <ImageButton
                         x:Name="linkedin"
                         Grid.Row="0"

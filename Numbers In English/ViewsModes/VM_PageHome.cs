@@ -23,6 +23,7 @@ namespace NumbersInEnglish.ViewsModes
         public VM_PageHome(INavigation navigation)
         {
             ThemeApp = LocalStorange.GetLocalStorange("theme");
+
             ColorFramePrincipal = Xamarin.Forms.Color.FromHex("333333");
 
             LabelPoints = 10;
@@ -39,7 +40,8 @@ namespace NumbersInEnglish.ViewsModes
 
             GenerateNumber();
             GenerateAnswers();
-            Thema = Color.Black;
+
+            Thema = Xamarin.Forms.Color.FromHex("303345");
 
             Navigation = navigation;
         }

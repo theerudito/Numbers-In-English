@@ -12,9 +12,11 @@ namespace NumbersInEnglish
     {
         public App()
         {
-            Ads.ShowRewardedVideo();
+            InitializeComponent();
 
-            LocalStorange.SetLocalStorange("theme", "Dark");
+            Application.Current.UserAppTheme = OSAppTheme.Light;
+
+            Ads.ShowIntertiscal();
 
             var _dbCcontext = new ApplicationContext_DB();
 
@@ -27,12 +29,16 @@ namespace NumbersInEnglish
                 InformationData.DataDefault();
             }
 
-            InitializeComponent();
 
-            CrossMTAdmob.Current.OnRewardedVideoAdLoaded += (s, args) =>
+            CrossMTAdmob.Current.OnInterstitialLoaded += (s, args) =>
             {
-                CrossMTAdmob.Current.ShowRewardedVideo();
+                CrossMTAdmob.Current.ShowInterstitial();
             };
+
+            //CrossMTAdmob.Current.OnRewardedVideoAdLoaded += (s, args) =>
+            //{
+            //    CrossMTAdmob.Current.ShowRewardedVideo();
+            //};
 
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {
@@ -62,6 +68,7 @@ namespace NumbersInEnglish
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()
