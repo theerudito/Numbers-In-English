@@ -14,7 +14,16 @@ namespace NumbersInEnglish
         {
             InitializeComponent();
 
-            Application.Current.UserAppTheme = OSAppTheme.Light;
+            var thema = LocalStorange.GetLocalStorange("theme");
+
+            if (thema == null)
+            {
+                LocalStorange.SetLocalStorange("theme", "Light");
+            }
+            else
+            {
+                LocalStorange.SetLocalStorange("theme", thema);
+            }
 
             Ads.ShowIntertiscal();
 
@@ -35,10 +44,6 @@ namespace NumbersInEnglish
                 CrossMTAdmob.Current.ShowInterstitial();
             };
 
-            //CrossMTAdmob.Current.OnRewardedVideoAdLoaded += (s, args) =>
-            //{
-            //    CrossMTAdmob.Current.ShowRewardedVideo();
-            //};
 
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {

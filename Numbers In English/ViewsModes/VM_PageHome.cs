@@ -22,26 +22,16 @@ namespace NumbersInEnglish.ViewsModes
 
         public VM_PageHome(INavigation navigation)
         {
-            ThemeApp = LocalStorange.GetLocalStorange("theme");
 
             ColorFramePrincipal = Xamarin.Forms.Color.FromHex("333333");
 
             LabelPoints = 10;
             LabelTime = 99;
 
-            if (ThemeApp == "Dark")
-            {
-                Theme();
-            }
-            else
-            {
-                Theme();
-            }
+            Theme();
 
             GenerateNumber();
             GenerateAnswers();
-
-            Thema = Xamarin.Forms.Color.FromHex("303345");
 
             Navigation = navigation;
         }
@@ -629,8 +619,8 @@ namespace NumbersInEnglish.ViewsModes
             }
             else
             {
-                Thema = Xamarin.Forms.Color.FromHex("303345");
-                ImageTheme = ImageSource.FromFile("dark.png");
+                Thema = Xamarin.Forms.Color.FromHex("#303345");
+                ImageTheme = ImageSource.FromFile("dark.png ");
                 LocalStorange.SetLocalStorange("theme", "Dark");
             }
         }
